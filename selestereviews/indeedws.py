@@ -25,6 +25,7 @@ def get_ratings(soup, company):
 
 	if len(soup.select('dl#cmp-reviews-attributes dt')) != 0:
 		company_ratings[company] = {}
+		company_ratings[company]['number'] = int([div.get_text() for div in soup.select('div.cmp-note')][2])
 		rating_categories = [dl.get_text() for dl in soup.select('dl#cmp-reviews-attributes dt')]
 
 		# need to grab pixel values from dom, splice, and turn into integers
