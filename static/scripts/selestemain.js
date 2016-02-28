@@ -1,7 +1,7 @@
 var gdAPICompanyResults = []
 var userIP = "localhost:8000"
 var userAgent ="chrome"
-
+console.log(FBAppID);
 var app = angular.module('seleste', ['ngRoute', 'ngAnimate']);
 
 	app.config(function($routeProvider) {
