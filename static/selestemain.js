@@ -1,8 +1,22 @@
+
 var gdAPICompanyResults = []
 var userIP = "localhost:8000"
 var userAgent ="chrome"
 console.log(FBAppID);
 var app = angular.module('seleste', ['ngRoute', 'ngAnimate']);
+
+	// avoid conflict with Django templating '{{}}''
+	app.config(function($interpolateProvider){
+		$interpolateProvider.startSymbol('[[').endSymbol(']]')
+	});
+
+	// TODO - httpProvider import, dependency?
+	// // telling Angular to generate token even if tag not in templates
+	// $httpProvider.defaults.xsrfCookieName = 'csrftoken';
+	// $httpProvider.defaults.xsrfHeaderName = 'X-CRSFToken';
+
+	// // telling Angular not to strip trailing slashes, will cause problems for Django
+	// $resourceProvider.defaults.stripTrailingSlashes = false;
 
 	app.config(function($routeProvider) {
 		$routeProvider
