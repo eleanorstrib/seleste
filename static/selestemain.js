@@ -21,7 +21,7 @@ var app = angular.module('seleste', ['ngRoute', 'ngAnimate']);
 	app.config(function($routeProvider) {
 		$routeProvider
 		.when('/', {
-			templateUrl: 'static/partials/home.html',
+			templateUrl: 'selestesearch/index.html',
 			controller: 'homeCtrl'
 		})
 		.when('/about', {
