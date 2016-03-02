@@ -18,15 +18,13 @@ from django.contrib import admin
 from rest_framework import routers
 from selestesearch.views import index
 from django.views.generic import TemplateView
-from django.conf.urls import patterns
 
-urlpatterns = patterns('',
+urlpatterns = [
 	url(r'^.*$', TemplateView.as_view(template_name='base.html')),
-	url(r'^rendered-partials(?P<home>).*$', 'render_partial'),
-	# url(r'', include('selestesearch.urls')),
- #    url(r'', include('selestereviews.urls')),
+	url(r'', include('selestesearch.urls')),
+    url(r'', include('selestereviews.urls')),
     url(r'^admin/', admin.site.urls),
-)
+]
 
 # urlpatterns = [
 #     url(r'', include('selestesearch.urls')),
