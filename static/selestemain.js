@@ -21,12 +21,15 @@ var app = angular.module('seleste', ['ngRoute', 'ngAnimate']);
 	app.config(function($routeProvider) {
 		$routeProvider
 		.when('/', {
-			templateUrl: 'selestesearch/index.html',
+			templateUrl: '/selestesearch/index.html',
 			controller: 'homeCtrl'
 		})
 		.when('/about', {
 			templateUrl:'static/partials/about.html',
 			contoller: 'aboutCtrl'
+		})
+		.otherwise({
+			redirectTo: '/'
 		});
 	});
 	
